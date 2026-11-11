@@ -9,7 +9,7 @@ controller = Xbox360Controller(0, 0.1)
 class XboxControllerPublisher(Node):
     def __init__(self):
         super().__init__('xbox_controller_pub')
-        self.publisher_ = self.create_publisher(Twist, 'cmd_vel_unstamped', 10)
+        self.publisher_ = self.create_publisher(Twist, '/diff_drive_controller/cmd_vel_unstamped', 10)
         self.timer = self.create_timer(0.1, self.timer_callback)
 
     def timer_callback(self):
