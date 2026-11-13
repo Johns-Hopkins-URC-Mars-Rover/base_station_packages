@@ -13,8 +13,8 @@ class XboxControllerPublisher(Node):
         self.timer = self.create_timer(0.1, self.timer_callback)
 
     def timer_callback(self):
-        speed = -controller.axis_l.y * 50
-        turn = controller.axis_r.x * 50
+        speed = -controller.axis_l.y * 0.25
+        turn = controller.axis_r.x * -0.5
         data = Twist()
         data.linear.x = speed
         data.angular.z = turn
